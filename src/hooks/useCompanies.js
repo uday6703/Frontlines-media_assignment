@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useCompanyContext } from '../context/CompanyContext';
-import { fetchCompanies } from '../data/mockCompanies';
+import { mockCompanies } from '../data/mockCompanies';
 import { filterCompanies, sortCompanies, paginateCompanies } from '../utils/companyUtils';
+import { usePagination } from './usePagination';
 
 export const useCompanies = () => {
   const { state, dispatch } = useCompanyContext();
+  const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
   useEffect(() => {
@@ -38,47 +40,39 @@ export const useCompanies = () => {
     itemsPerPage
   );
 
-  const totalPages = Math.ceil(state.filteredCompanies.length / itemsPerPage);
+  const { paginatedData, totalPages, currentPage: paginationPage } = usePagination({
+    data: state.filteredCompanies,
+    currentPage: state.currentPage,
+    itemsPerPage,
+  });
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
     dispatch({ type: 'SET_CURRENT_PAGE', payload: page });
   };
 
-  const handleItemsPerPageChange = (newItemsPerPage: number) => {
+  const handleItemsPerPageChange = (newItemsPerPage) => {
     setItemsPerPage(newItemsPerPage);
+    setCurrentPage(1);
     dispatch({ type: 'SET_CURRENT_PAGE', payload: 1 });
   };
 
   return {
-    companies: paginatedCompanies,
+    companies: paginatedData,
+    allCompanies: state.companies,
+    filteredCompanies: state.filteredCompanies,
     totalCompanies: state.filteredCompanies.length,
     currentPage: state.currentPage,
     totalPages,
     itemsPerPage,
-    loading: state.loading,
+    isLoading: state.loading,
     error: state.error,
     handlePageChange,
     handleItemsPerPageChange,
   };
 };
 
-export const useCompanyFilters = () => {
-  const { state, dispatch } = useCompanyContext();
-
-  const updateFilter = (filterName: string, value: any) => {
-    dispatch({
-      type: 'SET_FILTERS',
-      payload: { [filterName]: value },
-    });
-  };
-
-  const resetFilters = () => {
-    dispatch({ type: 'RESET_FILTERS' });
-  };
-
-  return {
-    filters: state.filters,
-    updateFilter,
-    resetFilters,
-  };
+const fetchCompanies = async () => {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  return mockCompanies;
 };

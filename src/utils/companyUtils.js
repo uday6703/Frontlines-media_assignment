@@ -1,6 +1,4 @@
-import type { Company, CompanyFilters, SortConfig } from '../types/Company';
-
-export const filterCompanies = (companies: Company[], filters: CompanyFilters): Company[] => {
+export const filterCompanies = (companies, filters) => {
   return companies.filter(company => {
     const matchesSearch = !filters.search || 
       company.name.toLowerCase().includes(filters.search.toLowerCase()) ||
@@ -22,35 +20,39 @@ export const filterCompanies = (companies: Company[], filters: CompanyFilters): 
   });
 };
 
-export const sortCompanies = (companies: Company[], sortConfig: SortConfig | null): Company[] => {
+export const sortCompanies = (companies, sortConfig) => {
   if (!sortConfig) return companies;
 
   return [...companies].sort((a, b) => {
     const aValue = a[sortConfig.key];
     const bValue = b[sortConfig.key];
 
-    if (aValue === bValue) return 0;
+    if (typeof aValue === 'string' && typeof bValue === 'string') {
+      return sortConfig.direction === 'asc' 
+        ? aValue.localeCompare(bValue)
+        : bValue.localeCompare(aValue);
+    }
 
-    const comparison = aValue < bValue ? -1 : 1;
-    return sortConfig.direction === 'asc' ? comparison : -comparison;
+    if (typeof aValue === 'number' && typeof bValue === 'number') {
+      return sortConfig.direction === 'asc' 
+        ? aValue - bValue
+        : bValue - aValue;
+    }
+
+    return 0;
   });
 };
 
-export const paginateCompanies = (companies: Company[], page: number, itemsPerPage: number): Company[] => {
-  const startIndex = (page - 1) * itemsPerPage;
+export const paginateCompanies = (companies, currentPage, itemsPerPage) => {
+  const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   return companies.slice(startIndex, endIndex);
 };
 
-export const getUniqueValues = (companies: Company[], key: keyof Company): string[] => {
-  const values = companies.map(company => String(company[key]));
-  return [...new Set(values)].filter(Boolean).sort();
+export const getUniqueValues = (companies, key) => {
+  return [...new Set(companies.map(company => company[key]))];
 };
 
-export const formatRevenue = (revenue: number): string => {
-  return `₹${(revenue / 100).toFixed(2)} Cr`;
-};
-
-export const formatEmployees = (employees: number): string => {
-  return employees.toLocaleString();
+export const formatRevenue = (revenue) => {
+  return `₹${revenue.toFixed(1)} Cr`;
 };
