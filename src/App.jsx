@@ -96,8 +96,8 @@ const CompanyDashboard = () => {
           Discover and explore companies across various industries
         </Typography>
         
-        <Card sx={{ mb: 3 }}>
-          <CardContent>
+        <Card sx={{ mb: 3, width: '100%' }}>
+          <CardContent sx={{ width: '100%' }}>
             <CompanyFilters />
           </CardContent>
         </Card>
