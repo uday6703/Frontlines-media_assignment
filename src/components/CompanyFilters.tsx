@@ -29,6 +29,7 @@ const CompanyFilters: React.FC = () => {
   const statuses = ['Active', 'Inactive', 'Acquired']; // Fixed list of possible statuses
 
   const handleFilterChange = (filterName: string, value: any) => {
+    // Update filters and reset to first page
     dispatch({
       type: 'SET_FILTERS',
       payload: { [filterName]: value },

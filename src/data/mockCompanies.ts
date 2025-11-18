@@ -3,6 +3,8 @@ import type { Company } from '../types/Company';
 // Mock company data for demonstration
 // In a real app, this would come from an API
 // TODO: Replace with actual API calls when backend is ready
+// TODO: Move this to a real API later
+// Mock company data for development
 export const mockCompanies: Company[] = [
   {
     id: '1',
