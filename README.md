@@ -23,6 +23,8 @@ A modern, responsive React frontend application for managing and displaying comp
 - **Icons**: Material-UI Icons
 - **Development**: ESLint for code quality
 
+> **Note**: There's a Vite Node.js version warning, but the application runs fine on Node.js 20.17.0.
+
 ## 📁 Project Structure
 
 ```
