@@ -19,18 +19,16 @@ import Pagination from './components/Pagination';
 import LoadingState from './components/LoadingState';
 import { useCompanies } from './hooks/useCompanies';
 
-// Custom theme - went with blue as primary since it looks professional
-// Could experiment with other colors later
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // Nice blue shade
+      main: '#1976d2',
     },
     secondary: {
       main: '#dc004e',
     },
     background: {
-      default: '#f5f5f5', // Light gray background
+      default: '#f5f5f5',
     },
   },
   typography: {
@@ -51,11 +49,12 @@ const theme = createTheme({
         },
       },
     },
+    },
+  components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 6,
-          textTransform: 'none', // Don't uppercase button text
+          textTransform: 'none',
         },
       },
     },

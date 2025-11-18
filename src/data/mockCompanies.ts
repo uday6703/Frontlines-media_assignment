@@ -1,10 +1,5 @@
 import type { Company } from '../types/Company';
 
-// Mock company data for demonstration
-// In a real app, this would come from an API
-// TODO: Replace with actual API calls when backend is ready
-// TODO: Move this to a real API later
-// Mock company data for development
 export const mockCompanies: Company[] = [
   {
     id: '1',
@@ -13,7 +8,7 @@ export const mockCompanies: Company[] = [
     location: 'San Francisco, CA',
     foundedYear: 2015,
     employees: 1200,
-    revenue: 3739.15, // ₹37.39 crores
+    revenue: 3739.15,
     website: 'https://techcorp.com',
     description: 'Leading provider of cloud-based software solutions for enterprise clients.',
     ceo: 'Sarah Johnson',
@@ -26,7 +21,7 @@ export const mockCompanies: Company[] = [
     location: 'Austin, TX',
     foundedYear: 2018,
     employees: 800,
-    revenue: 2284.99, // ₹22.85 crores
+    revenue: 2284.99,
     website: 'https://greenenergy.com',
     description: 'Renewable energy solutions and solar panel installations.',
     ceo: 'Michael Chen',
@@ -39,7 +34,7 @@ export const mockCompanies: Company[] = [
     location: 'New York, NY',
     foundedYear: 1995,
     employees: 5000,
-    revenue: 9965.81, // ₹99.66 crores
+    revenue: 9965.81,
     website: 'https://financefirst.com',
     description: 'Full-service commercial and retail banking institution.',
     ceo: 'Robert Williams',
@@ -52,7 +47,7 @@ export const mockCompanies: Company[] = [
     location: 'Boston, MA',
     foundedYear: 2010,
     employees: 2500,
-    revenue: 7388.66, // ₹73.89 crores
+    revenue: 7388.66,
     website: 'https://healthplus.com',
     description: 'Comprehensive healthcare services and medical technology.',
     ceo: 'Dr. Lisa Anderson',
@@ -65,7 +60,7 @@ export const mockCompanies: Company[] = [
     location: 'Seattle, WA',
     foundedYear: 2020,
     employees: 450,
-    revenue: 1044.14, // ₹10.44 crores
+    revenue: 1044.14,
     website: 'https://edutech.com',
     description: 'Online educational platforms and e-learning solutions.',
     ceo: 'James Rodriguez',
@@ -78,7 +73,7 @@ export const mockCompanies: Company[] = [
     location: 'Chicago, IL',
     foundedYear: 1985,
     employees: 15000,
-    revenue: 17434.15, // ₹174.34 crores
+    revenue: 17434.15,
     website: 'https://retailmax.com',
     description: 'Large retail chain with stores across the United States.',
     ceo: 'Emma Thompson',
@@ -91,7 +86,7 @@ export const mockCompanies: Company[] = [
     location: 'Detroit, MI',
     foundedYear: 1978,
     employees: 3200,
-    revenue: 5605.82, // ₹56.06 crores
+    revenue: 5605.82,
     website: 'https://manufacturepro.com',
     description: 'Automotive parts manufacturing and supply chain solutions.',
     ceo: 'David Kim',
@@ -104,7 +99,7 @@ export const mockCompanies: Company[] = [
     location: 'Portland, OR',
     foundedYear: 2012,
     employees: 1800,
-    revenue: 2663.47, // ₹26.63 crores
+    revenue: 2663.47,
     website: 'https://fooddelight.com',
     description: 'Organic food products and sustainable farming initiatives.',
     ceo: 'Maria Garcia',
@@ -117,7 +112,7 @@ export const mockCompanies: Company[] = [
     location: 'Miami, FL',
     foundedYear: 2005,
     employees: 2200,
-    revenue: 4030.48, // ₹40.30 crores
+    revenue: 4030.48,
     website: 'https://transportlogistics.com',
     description: 'Freight and logistics services for international trade.',
     ceo: 'Carlos Martinez',
@@ -130,7 +125,7 @@ export const mockCompanies: Company[] = [
     location: 'Los Angeles, CA',
     foundedYear: 2017,
     employees: 650,
-    revenue: 1620.99, // ₹16.21 crores
+    revenue: 1620.99,
     website: 'https://mediaworks.com',
     description: 'Digital media production and content creation services.',
     ceo: 'Jennifer Lee',
@@ -143,7 +138,7 @@ export const mockCompanies: Company[] = [
     location: 'Washington, DC',
     foundedYear: 2019,
     employees: 350,
-    revenue: 744.51, // ₹7.45 crores
+    revenue: 744.51,
     website: 'https://cybersecure.com',
     description: 'Cybersecurity solutions and penetration testing services.',
     ceo: 'Alex Turner',
@@ -156,7 +151,7 @@ export const mockCompanies: Company[] = [
     location: 'San Jose, CA',
     foundedYear: 2016,
     employees: 950,
-    revenue: 2592.92, // ₹25.93 crores
+    revenue: 2592.92,
     website: 'https://cloudfirst.com',
     description: 'Cloud infrastructure and DevOps automation tools.',
     ceo: 'Ryan Singh',
@@ -169,7 +164,7 @@ export const mockCompanies: Company[] = [
     location: 'San Diego, CA',
     foundedYear: 2008,
     employees: 1100,
-    revenue: 4712.74, // ₹47.13 crores
+    revenue: 4712.74,
     website: 'https://biopharma.com',
     description: 'Pharmaceutical research and drug development.',
     ceo: 'Dr. Patricia Wilson',
@@ -182,7 +177,7 @@ export const mockCompanies: Company[] = [
     location: 'Denver, CO',
     foundedYear: 2013,
     employees: 750,
-    revenue: 1947.18, // ₹19.47 crores
+    revenue: 1947.18,
     website: 'https://greenbuild.com',
     description: 'Sustainable construction and green building technologies.',
     ceo: 'Mark Johnson',
@@ -195,7 +190,7 @@ export const mockCompanies: Company[] = [
     location: 'Houston, TX',
     foundedYear: 2001,
     employees: 4200,
-    revenue: 12037.49, // ₹120.37 crores
+    revenue: 12037.49,
     website: 'https://aerospace.com',
     description: 'Aerospace engineering and satellite technology development.',
     ceo: 'Colonel John Davis',
@@ -208,7 +203,7 @@ export const mockCompanies: Company[] = [
     location: 'Phoenix, AZ',
     foundedYear: 2021,
     employees: 280,
-    revenue: 375.16, // ₹3.75 crores
+    revenue: 375.16,
     website: 'https://smarthome.com',
     description: 'IoT devices and smart home automation systems.',
     ceo: 'Sophie Brown',
@@ -221,7 +216,7 @@ export const mockCompanies: Company[] = [
     location: 'Long Beach, CA',
     foundedYear: 1992,
     employees: 1600,
-    revenue: 3309.21, // ₹33.09 crores
+    revenue: 3309.21,
     website: 'https://oceanfreight.com',
     description: 'International shipping and maritime logistics.',
     ceo: 'Captain Thomas Miller',
@@ -234,7 +229,7 @@ export const mockCompanies: Company[] = [
     location: 'Des Moines, IA',
     foundedYear: 2014,
     employees: 420,
-    revenue: 654.87, // ₹6.55 crores
+    revenue: 654.87,
     website: 'https://ecofarm.com',
     description: 'Organic farming and sustainable agriculture solutions.',
     ceo: 'Mary Taylor',
@@ -247,7 +242,7 @@ export const mockCompanies: Company[] = [
     location: 'Las Vegas, NV',
     foundedYear: 2007,
     employees: 890,
-    revenue: 1298.12, // ₹12.98 crores
+    revenue: 1298.12,
     website: 'https://luxurytravel.com',
     description: 'High-end travel and hospitality services.',
     ceo: 'Richard Stone',
@@ -260,7 +255,7 @@ export const mockCompanies: Company[] = [
     location: 'Atlanta, GA',
     foundedYear: 2018,
     employees: 670,
-    revenue: 1573.68, // ₹15.74 crores
+    revenue: 1573.68,
     website: 'https://dataanalytics.com',
     description: 'Big data analytics and business intelligence solutions.',
     ceo: 'Dr. Kevin Liu',

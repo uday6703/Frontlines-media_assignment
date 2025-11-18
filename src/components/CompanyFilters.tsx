@@ -20,16 +20,13 @@ const CompanyFilters: React.FC = () => {
 
   const industries = getUniqueValues(companies, 'industry');
   const locations = getUniqueValues(companies, 'location').map(loc => {
-    // Extract city, state from full location string
-    // e.g., "San Francisco, CA" -> "CA"
     return loc.split(',').pop()?.trim() || loc;
   });
   const uniqueLocations = [...new Set(locations)];
 
-  const statuses = ['Active', 'Inactive', 'Acquired']; // Fixed list of possible statuses
+  const statuses = ['Active', 'Inactive', 'Acquired'];
 
   const handleFilterChange = (filterName: string, value: any) => {
-    // Update filters and reset to first page
     dispatch({
       type: 'SET_FILTERS',
       payload: { [filterName]: value },

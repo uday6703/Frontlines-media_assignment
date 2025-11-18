@@ -5,7 +5,7 @@ export interface Company {
   location: string;
   foundedYear: number;
   employees: number;
-  revenue: number; // in lakhs INR
+  revenue: number;
   website: string;
   description: string;
   ceo: string;

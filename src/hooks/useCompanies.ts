@@ -7,19 +7,16 @@ export const useCompanies = () => {
   const { state, dispatch } = useCompanyContext();
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
-  // Fetch companies on mount
   useEffect(() => {
     const loadCompanies = async () => {
       dispatch({ type: 'SET_LOADING', payload: true });
       dispatch({ type: 'SET_ERROR', payload: null });
       
       try {
-        // Simulating API call with mock data
-        // TODO: Replace with actual API endpoint
         const companies = await fetchCompanies();
         dispatch({ type: 'SET_COMPANIES', payload: companies });
       } catch (error) {
-        console.error('Failed to load companies:', error); // Debug logging
+        console.error('Failed to load companies:', error);
         dispatch({ type: 'SET_ERROR', payload: 'Failed to load companies' });
       } finally {
         dispatch({ type: 'SET_LOADING', payload: false });
@@ -29,14 +26,12 @@ export const useCompanies = () => {
     loadCompanies();
   }, [dispatch]);
 
-  // Apply filters and sorting whenever companies, filters, or sortConfig change
   useEffect(() => {
     const filtered = filterCompanies(state.companies, state.filters);
     const sorted = sortCompanies(filtered, state.sortConfig);
     dispatch({ type: 'SET_FILTERED_COMPANIES', payload: sorted });
   }, [state.companies, state.filters, state.sortConfig, dispatch]);
 
-  // Get paginated companies
   const paginatedCompanies = paginateCompanies(
     state.filteredCompanies,
     state.currentPage,

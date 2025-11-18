@@ -1,6 +1,3 @@
-// Personal utility functions - might move these later
-// Some helper functions I created during development
-
 /**
  * Debounce function to limit API calls
  * Not using it currently but might be useful for search optimization
@@ -31,5 +28,3 @@ export const capitalize = (str: string): string => {
 export const formatNumber = (num: number): string => {
   return new Intl.NumberFormat('en-IN').format(num);
 };
-
-// TODO: Clean up unused functions before final submission
